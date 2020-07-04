@@ -1,14 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
-
+import {MyProjectsComponent} from '../my-projects/my-projects.component'
+import axios, {AxiosInstance} from "axios";
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+    projects = ['createdAt', 'updatedAt', 'id', 'name', 'description', 'content'];
+    myProjects = [];
+    constructor() { }
 
-  constructor() { }
+    getProjects() {
+        axios.get('http://localhost:8080/api/projects')
+            .then(response => {
+                this.myProjects = response.data.content;
+            });
+    }
   startAnimationForLineChart(chart){
       let seq: any, delays: any, durations: any;
       seq = 0;
@@ -145,6 +154,7 @@ export class DashboardComponent implements OnInit {
 
       //start animation for the Emails Subscription Chart
       this.startAnimationForBarChart(websiteViewsChart);
+      this.getProjects()
   }
 
 }

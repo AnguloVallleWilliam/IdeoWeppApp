@@ -70,23 +70,26 @@
           </div>
       </div> -->
       <div class="row">
-          <div class="col-md-4">
-              <div class="card card-chart">
-                  <div class="card-header card-header-success">
-                      <div class="ct-chart" id="dailySalesChart"></div>
-                  </div>
-                  <div class="card-body">
-                      <h4 class="card-title">Projecto Nova</h4>
-                      <p class="card-category">
-                          Buscamos especialistas en informática para crear una aplicación Open Source.</p>
-                  </div>
-                  <div class="card-footer">
-                      <div class="stats">
-                          <i class="material-icons">access_time</i> Publicado hace 5 días
+          <tr class="col-md-4" *ngFor="let project of myProjects">
+                  <div class="card card-chart">
+                      <div class="card-header card-header-success">
+                          <div class="ct-chart" id="dailySalesChart"></div>
                       </div>
-                  </div>
+                      <div class="card-body">
+                          <h4 class="card-title">{{project.name}}</h4>
+                          <p class="card-category">
+                              {{project.description}}.</p>
+                      </div>
+                      <div class="card-footer">
+                          <div class="stats">
+                              <i class="material-icons">access_time</i> {{project.createdAt}}
+                          </div>
+                      </div>
               </div>
-          </div>
+          </tr>
+
+      </div>
+      <div class="row">
           <div class="col-md-4">
               <div class="card card-chart">
                   <div class="card-header card-header-warning">

@@ -9,6 +9,8 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { MyProjectsComponent } from '../../my-projects/my-projects.component';
+import {oslogin} from "googleapis/build/src/apis/oslogin";
+import {LoginComponent} from "../../login/login.component";
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -53,8 +55,9 @@ export const AdminLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
+    { path: 'login',          component: LoginComponent },
     { path: 'dashboard',      component: DashboardComponent },
-    { path: 'my-projects',      component: MyProjectsComponent },
+    { path: 'my-projects',    component: MyProjectsComponent },
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
     { path: 'typography',     component: TypographyComponent },

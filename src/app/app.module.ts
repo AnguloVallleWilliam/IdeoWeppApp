@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-
+import { MatTableModule } from '@angular/material/table'
 
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -32,6 +32,7 @@ import { RegisterComponent } from './register/register.component';
         BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
+        MatTableModule,
         HttpModule,
         ComponentsModule,
         RouterModule,

@@ -1,110 +1,29 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6">
-                <div class="card card-chart">
-                    <div class="card-header card-header-success">
-                        <div class="ct-chart" ></div>
-                        <img src="https://ora.pm/posts/assets/marketing-project.png" class="card" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Projecto 1</h4>
-                        <p class="card-category">
-                            Buscamos especialistas en nuestro proyecto actualmente.</p>
-                    </div>
-                    <div class="row btn-sm">
-                        <div class="col-md-3">
-                            <button mat-raised-button class="btn btn-success btn-block" >Apply</button>
+            <tr class="col-md-6" *ngFor="let project of myProjects">
+                    <div class="card card-chart">
+                            <div class="card-header card-header-warning">
+                                <div class="ct-chart" ></div>
+                                <img src="https://ora.pm/posts/assets/marketing-project.png" class="card" alt="">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">{{project.name}}</h4>
+                                <p class="card-category">
+                                    {{project.description}}</p>
+                            </div>
+                            <div class="row btn-sm">
+                                <div class="col-md-3">
+                                    <button mat-raised-button class="btn btn-success btn-block" (click)="router.navigate(['/table-list'])">Info</button>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">access_time</i> publicado : {{project.createdAt}}
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-3">
-                            <button mat-raised-button class="btn btn-success btn-block" >Info</button>
-                        </div>
-                    </div>
-                    <!--div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">access_time</i> Publicado hace dos dias
-                        </div>
-                    </div-->
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card card-chart">
-                    <div class="card-header card-header-danger">
-                        <div class="ct-chart" ></div>
-                        <img src="https://ora.pm/posts/assets/marketing-project.png" class="card" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Projecto 2</h4>
-                        <p class="card-category">
-                            Buscamos especialistas en informática para crear una aplicación Open Source.</p>
-                    </div>
-                    <div class="row btn-sm">
-                        <div class="col-md-3">
-                            <button mat-raised-button class="btn btn-success btn-block" >Apply</button>
-                        </div>
-                        <div class="col-md-3">
-                            <button mat-raised-button class="btn btn-success btn-block" >Info</button>
-                        </div>
-                    </div>
-                    <!--div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">access_time</i> Publicado hace dos dias
-                        </div>
-                    </div-->
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card card-chart">
-                    <div class="card-header card-header-warning">
-                        <div class="ct-chart" ></div>
-                        <img src="https://ora.pm/posts/assets/marketing-project.png" class="card" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Projecto 3</h4>
-                        <p class="card-category">
-                            Buscamos especialistas en informática para crear una aplicación Open Source.</p>
-                    </div>
-                    <div class="row btn-sm">
-                        <div class="col-md-3">
-                            <button mat-raised-button class="btn btn-success btn-block" >Apply</button>
-                        </div>
-                        <div class="col-md-3">
-                            <button mat-raised-button class="btn btn-success btn-block" >Info</button>
-                        </div>
-                    </div>
-                    <!--div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">access_time</i> Publicado hace dos dias
-                        </div>
-                    </div-->
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card card-chart">
-                    <div class="card-header card-header-rose">
-                        <div class="ct-chart" ></div>
-                        <img src="https://ora.pm/posts/assets/marketing-project.png" class="card" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Projecto 4</h4>
-                        <p class="card-category">
-                            Buscamos especialistas en informática para crear una aplicación Open Source.</p>
-                    </div>
-                    <div class="row btn-sm">
-                        <div class="col-md-3">
-                            <button mat-raised-button class="btn btn-success btn-block" >Apply</button>
-                        </div>
-                        <div class="col-md-3">
-                            <button mat-raised-button class="btn btn-success btn-block" >Info</button>
-                        </div>
-                    </div>
-                    <!--div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">access_time</i> Publicado hace dos dias
-                        </div>
-                    </div-->
-                </div>
-            </div>
+            </tr>
         </div>
     </div>
 </div>
